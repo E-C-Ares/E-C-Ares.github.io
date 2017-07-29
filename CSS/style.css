@@ -41,6 +41,11 @@ ul{
 label{
 	margin:0;
 }
+
+.weakframe{
+    border: hidden;
+}
+
 /*-- Header --*/
 .header {
     background: #FFF;
