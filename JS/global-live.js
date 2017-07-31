@@ -16,13 +16,13 @@ function glive() {
 
     window.onresize();
 
-    Clay.Collada.load('./XML/ground.xml', function (scene) {
+    Clay.Collada.load('../XML/ground.xml', function (scene) {
         scene.init(stage);
 
-        var e = new Clay.Texture('./PNG/simpleRectMap.png', stage);
+        var e = new Clay.Texture('../PNG/simpleRectMap.png', stage);
 
         var clouds = new Image();
-        clouds.src = './PNG/cloudView.png';
+        clouds.src = '../PNG/cloudView.png';
 
         //var dark = new Image();
         //dark.src = 'static/collada/darkside.png';
