@@ -1,16 +1,16 @@
 <COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
 <asset>
 <contributor>
-<authoring_tool>Google SketchUp 6.4.112</authoring_tool>
+<authoring_tool>e-c-ares.github.io</authoring_tool>
 </contributor>
-<created>2008-04-14T16:39:14Z</created>
-<modified>2008-04-14T16:39:14Z</modified>
+<created>2008-08-07T10:00:01Z</created>
+<modified>2008-08-08T10:00:01Z</modified>
 <unit name="inches" meter="0.0254"/>
 <up_axis>Z_UP</up_axis>
 </asset>
 <library_images>
 <image id="material0-image" name="material0-image">
-<init_from>earth.jpg</init_from>
+<init_from>ground.jpg</init_from>
 </image>
 </library_images>
 <library_materials>
