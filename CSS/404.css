@@ -34,6 +34,7 @@ html, body {
     text-align: center;
     margin: 0 auto;
     background: rgba(0, 0, 0, 0)
+    line-height:1000pt;
 }
 
 .saying:after {
@@ -48,8 +49,12 @@ html, body {
     animation: caret 500ms infinite;
 }
 
-#mew {
+.occultator{
     display: none
+}
+
+#mew{
+    display: none;
 }
 
 /*
