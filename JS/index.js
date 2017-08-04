@@ -1,0 +1,1 @@
+$.getJSON('./result.json',function(result){}

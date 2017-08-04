@@ -1,0 +1,28 @@
+{
+  "member": [
+    {
+      "nname": "C.Ares",
+      "email": "ares1899@126.com",
+      "union": "su",
+      "atari": "PNG/face000.png"
+    },
+    {
+      "nname": "Micheal.S",
+      "email": "Hunter@126.com",
+      "union": "su",
+      "atari": "PNG/face00X.png"
+    },
+    {
+      "nname": "cragoncanth",
+      "email": "mail.coelacanth@gmail.com",
+      "union": "admin",
+      "atari": "PNG/face000.png"
+    },
+    {
+      "nname": "Member.A",
+      "email": "none",
+      "union": "ober",
+      "atari": "PNG/face004.png"
+    }
+  ]
+}
