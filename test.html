@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+    <script src="./JS/jquery-3.2.1.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    $.ajax({
+        type: "get",
+        url:  "./JSON/result.json",
+        datatype: "json",
+        success: function (data,status) {
+            document.writeln("学生：<br/>")
+            for (i=data[1].snum; i > 0;i --) {
+                document.writeln(data.teacher[i].name+data.teacher[i].age+"<br/>")
+            }
+
+            document.writeln("<p/>老师：<br/>")
+            for (var x in data.teacher) {
+                document.writeln(data.teacher[x].name+data.teacher[x].age+"<br/>")
+            }
+        },
+        error:   function (data,status) { alert("Ajax请求Json错误");}
+    });
+</script>
+</body>
+</html>
