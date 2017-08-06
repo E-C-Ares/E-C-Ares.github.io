@@ -8,6 +8,8 @@
     <script type="applijewelleryion/x-javascript">
          addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
 
+
+
     </script>
     <link href="./CSS/bootstrap.css" rel='stylesheet' type='text/css'/>
 
@@ -190,7 +192,7 @@
                 <div class="tc-ch wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
 
                     <div class="tch-img">
-                        <a href="singlepage.html"><img src="./PNG/t4.jpg" class="img-responsive" alt=""></a>
+                        <a href="singlepage.html"><img src="./PNG/main_ind.png" class="img-responsive" alt=""></a>
                     </div>
 
                     <h3><a href="singlepage.html">Lorem Ipsum is simply</a></h3>
@@ -412,31 +414,72 @@
                         <div class="clearfix"></div>
                     </div>
 
+                    <script>
+                        $.ajax({
+                            type: "get", //get方法访问
+                            dataType: "json",  //json格式数据
+                            url: "BackHandler.ashx",  //后台地址
+                            data: "pageIndex=" + pageIndex,   //要发送的数据
+                            complete: function () {
+                                $("#load").hide();
+                            },//AJAX请求完成时隐藏loading提示
+                            success: function (msg) {//msg为返回的数据，在这里做数据绑定
+                                var data = msg.table;
+                                $.each(data, function (i, n) {
+                                    var row = $("#template").clone();
+                                    row.find("#OrderID").text(n.订单ID);
+                                    row.find("#CustomerID").text(n.客户ID);
+                                    row.find("#EmployeeID").text(n.雇员ID);
+                                    row.find("#OrderDate").text(ChangeDate(n.订购日期));
+                                    if (n.发货日期 !== undefined) row.find("#ShippedDate").text(ChangeDate(n.发货日期));
+                                    row.find("#ShippedName").text(n.货主名称);
+                                    row.find("#ShippedAddress").text(n.货主地址);
+                                    row.find("#ShippedCity").text(n.货主城市);
+                                    row.find("#more").html("<a href=OrderInfo.aspx?id=" + n.订单ID + "&pageindex=" + pageIndex + "> More</a>");
+                                    row.attr("id", "ready");//改变绑定好数据的行的id
+                                    row.appendTo("#list_visf");//添加到模板的容器中
+                                })
+                            }
+                        });
+                    </script>
+
                     <div class="insta wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
                         <h4>Recent Faces</h4>
-                        <ul>
-                            <li><a href="singlepage.html"><img src="./PNG/face001.png" class="img-responsive" alt=""></a>
+                        <!--span render-html="visitors"></span-->
+                        <ul render-loop="recent_faces" id="list_visf">
+                            <li><a href="singlepage.html"><img src="./PNG/face001.png" class="img-responsive"
+                                                               alt=""></a>
                             </li>
-                            <li><a href="singlepage.html"><img src="./PNG/face002.png" class="img-responsive" alt=""></a>
+                            <li><a href="singlepage.html"><img src="./PNG/face002.png" class="img-responsive"
+                                                               alt=""></a>
                             </li>
-                            <li><a href="singlepage.html"><img src="./PNG/face003.png" class="img-responsive" alt=""></a>
+                            <li><a href="singlepage.html"><img src="./PNG/face003.png" class="img-responsive"
+                                                               alt=""></a>
                             </li>
-                            <li><a href="singlepage.html"><img src="./PNG/face004.png" class="img-responsive" alt=""></a>
+                            <li><a href="singlepage.html"><img src="./PNG/face004.png" class="img-responsive"
+                                                               alt=""></a>
                             </li>
-                            <li><a href="singlepage.html"><img src="./PNG/face005.png" class="img-responsive" alt=""></a>
+                            <li><a href="singlepage.html"><img src="./PNG/face005.png" class="img-responsive"
+                                                               alt=""></a>
                             </li>
-                            <li><a href="singlepage.html"><img src="./PNG/face006.png" class="img-responsive" alt=""></a>
+                            <li><a href="singlepage.html"><img src="./PNG/face006.png" class="img-responsive"
+                                                               alt=""></a>
                             </li>
-                            <li><a href="singlepage.html"><img src="./PNG/face007.png" class="img-responsive" alt=""></a>
+                            <li><a href="singlepage.html"><img src="./PNG/face007.png" class="img-responsive"
+                                                               alt=""></a>
                             </li>
-                            <li><a href="singlepage.html"><img src="./PNG/face008.png" class="img-responsive" alt=""></a>
+                            <li><a href="singlepage.html"><img src="./PNG/face008.png" class="img-responsive"
+                                                               alt=""></a>
                             </li>
-                            <li><a href="singlepage.html"><img src="./PNG/face009.png" class="img-responsive" alt=""></a>
+                            <li><a href="singlepage.html"><img src="./PNG/face009.png" class="img-responsive"
+                                                               alt=""></a>
                             </li>
-                            <li><a href="singlepage.html"><img src="./PNG/face010.png" class="img-responsive" alt=""></a>
+                            <li><a href="singlepage.html"><img src="./PNG/face010.png" class="img-responsive"
+                                                               alt=""></a>
                             </li>
                         </ul>
                     </div>
+
 
                     <p>Lorem ipsum ex vix illud nonummy, novum tation et his. At vix scripta patrioque scribentur, at
                         pro</p>

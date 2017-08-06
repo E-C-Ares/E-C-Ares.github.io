@@ -1,27 +1,24 @@
 {
-  "title":"【UI测试结果】-转转2017/1/23 14:47",
-  "starttime":"2017/1/23 15:00 45",
-  "endtime":"2017/1/23 15:01 42",
-  "passcount":10,
-  "failurecount":5,
-  "resultinfo":[
+  "snum": "2",
+  "tnum":"2",
+  "student": [
     {
-      "name":"发布",
-      "moudle":"Publish",
-      "pass":"true",
-      "onecepass":"true",
-      "log":"true"
+      "name": "小王",
+      "age": "10"
     },
     {
-      "name":"登录",
-      "moudle":"Login",
-      "pass":"false",
-      "onecepass":"true",
-      "log":"asserterrorlog",
-      "failurereason":{
-        "errorlog":"asserterror",
-        "errorimg":"./登录.jpg"
-      }
+      "name": "小孙",
+      "age": "20"
+    }
+  ],
+  "teacher": [
+    {
+      "name": "王老师",
+      "age": "30"
+    },
+    {
+      "name": "孙老师",
+      "age": "40"
     }
   ]
 }
