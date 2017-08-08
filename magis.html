@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+    <script src="./JS/jquery-3.2.1.js"></script>
+    <script src="./JS/formin.js"></script>
+</head>
+<body>
+
+<script type="text/template">
+    <tr mgid="{mgid}" mid="{mid}">
+        <td>
+            <input type="checkbox" mid="{mid}"></td>
+        <td>
+            <a href="{localfile}" data-fancybox-group="button" class="fancybox-buttons">
+                <img src="{localfile}" style="width:45px;height:45px;"></a>
+        </td>
+        <td>
+            <input type="text" class="input-large valid" value="{medianame}" onblur="TextOnBlur(this)"
+                   onclick="TextOnFocus(this)" name="medianame" mid="{mid}" readonly="readonly"></td>
+        <td>{mediatype}</td>
+        <!-- 各位看官，自定义的三个属性在这里哦~~ -->
+        <td>{fsize}</td>
+        <td>{asize}</td>
+        <td>{atime}</td>
+        <td>
+            <a onclick="updateMediaName(this)" href="javascript:void(0);">重命名</a>
+            <a onclick="showbulkUploadTemplate(this)" name="edit" localfile="{localfile}"
+               href="javascript:void(0);">替换</a>
+            <a onclick="daleteMedia(this)" href="javascript:void(0);">删除</a>
+            <a onclick="setMediaFaceImage(this);" title="设置为分组【{groupname}】的封面" groupname="{groupname}" mid="{mid}"
+               href="javascript:void(0);">设置封面</a>
+        </td>
+    </tr>
+</script>
+
+<script>
+    $.ajax({
+        url: '/JSON/test.json',
+        type: 'get',
+        data: data,
+        cache: false,
+        dataType: "json",
+        success: function (dta) {
+            if (!dta || !dta.rows || dta.rows.length <= 0) {
+                return;
+            }
+
+            //获取模板上的HTML
+            var html = $('script[type="text/template"]').html();
+            //定义一个数组，用来接收格式化合的数据
+            var arr = [];
+            //对数据进行遍历
+            $.each(dta.rows, function (i, o) {
+                //这里取到o就是上面rows数组中的值, formatTemplate是最开始定义的方法.
+                arr.push(formin(o, html));
+            });
+            //好了，最后把数组化成字符串，并添加到table中去。
+            $('#tableData').append(arr.join(''));
+            //走完这一步其实就完成了，不会吧，这么简单，不错，就是这么简单!! 不信就自己动手去试试!
+        }
+    });  </script>
+
+</body>
+</html>
