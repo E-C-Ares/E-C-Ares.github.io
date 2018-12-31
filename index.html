@@ -25,6 +25,10 @@
 
     <script>new WOW().init();</script>
     <script>
+        $(function(){
+            $('#heador').load('heador.html');
+            $('#footor').load('footor.html');
+        })
         var _hmt = _hmt || [];
         (function () {
             var hm = document.createElement("script");
@@ -39,9 +43,10 @@
 
 
 <body>
+<div id="heador"></div>
+
 
 <div class="header" id="ban">
-
     <div class="container">
         <div class="head-left wow fadeInLeft animated animated" data-wow-delay=".5s"
              style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
